@@ -19,8 +19,6 @@ dist-ssr
 .DS_Store
 .history
 .claude
-public/image.jpeg
-image.jpeg
 *.suo
 *.ntvs*
 *.njsproj
