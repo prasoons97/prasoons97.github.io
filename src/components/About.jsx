@@ -29,7 +29,7 @@ export default function About() {
           <div className={styles.imageCol}>
             <div className={styles.imageFrame}>
               <img
-                src="./../../image.jpeg"
+                src="/image.jpeg"
                 alt="Profile"
                 className={styles.profileImage}
               />
