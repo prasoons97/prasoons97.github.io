@@ -1,0 +1,352 @@
+/* ── Overlay ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(4, 4, 12, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px 40px;
+  overflow-y: auto;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Sheet (toolbar + paper together) ── */
+.sheet {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  gap: 16px;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.toolbarTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.toolbarSub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.printBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.printBtn:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  border-color: #f87171;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+}
+
+/* ── Paper ── */
+.paper {
+  background: #ffffff;
+  color: #1a1a2e;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 48px 52px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* ── Resume Header ── */
+.resumeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.nameBlock {}
+
+.resumeName {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #0d0d1a;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.resumeTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6c63ff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.contactLine {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #555577;
+}
+
+.contactIcon {
+  font-size: 11px;
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(90deg, #6c63ff, #f472b6);
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 22px;
+}
+
+.sectionTitle {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6c63ff;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e8e8f0;
+}
+
+/* Summary */
+.summary {
+  font-size: 13px;
+  color: #333348;
+  line-height: 1.7;
+}
+
+/* Skills */
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skillGroup {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 12.5px;
+}
+
+.skillCat {
+  font-weight: 700;
+  color: #1a1a2e;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+.skillItems {
+  color: #444460;
+}
+
+/* Experience */
+.expItem {
+  margin-bottom: 14px;
+}
+
+.expItem:last-child {
+  margin-bottom: 0;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.expRole {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0d0d1a;
+}
+
+.expCompany {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6c63ff;
+}
+
+.expPeriod {
+  font-size: 11.5px;
+  color: #888899;
+  font-family: 'Fira Code', monospace;
+  white-space: nowrap;
+}
+
+.expPoints {
+  margin: 0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.expPoints li {
+  font-size: 12.5px;
+  color: #333348;
+  line-height: 1.6;
+}
+
+/* Projects */
+.projectItem {
+  margin-bottom: 10px;
+}
+
+.projectItem:last-child {
+  margin-bottom: 0;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
+}
+
+.projectName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0d0d1a;
+}
+
+.projectTech {
+  font-size: 11.5px;
+  color: #6c63ff;
+  font-family: 'Fira Code', monospace;
+}
+
+.projectDesc {
+  font-size: 12.5px;
+  color: #444460;
+  line-height: 1.55;
+}
+
+/* ── Print styles ── */
+@media print {
+  .overlay {
+    position: static;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    display: block;
+    overflow: visible;
+  }
+
+  .sheet {
+    max-width: 100%;
+    animation: none;
+  }
+
+  .toolbar {
+    display: none;
+  }
+
+  .paper {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    font-size: 12px;
+  }
+
+  .resumeName { font-size: 28px; }
+}
+
+@media (max-width: 640px) {
+  .paper { padding: 32px 24px; }
+  .resumeHeader { flex-direction: column; }
+  .contactBlock { align-items: flex-start; }
+}
