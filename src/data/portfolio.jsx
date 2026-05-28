@@ -1,3 +1,7 @@
+import {SiJavascript, SiReact, SiNodedotjs, SiExpress, SiHtml5, SiTailwindcss, SiFirebase, SiVite,} from "react-icons/si";
+import { FaMobile, FaCss3Alt } from "react-icons/fa";
+
+
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
@@ -40,17 +44,18 @@ export const SKILLS = {
     { name: "Agentic Coding", level: "Familiar", color: "#6e40c9" },
   ],
 };
+
 export const TECH_ICONS = [
-  { name: "React", icon: "⚛️" },
-  { name: "JavaScript", icon: "JS" },
-  { name: "Node.js", icon: "⬡" },
-  { name: "Tailwind CSS", icon: "🌊" },
-  { name: "Firebase", icon: "🔥" },
-  { name: "Express.js", icon: "🚀" },
-  { name: "HTML5 / CSS3", icon: "🎨" },
-  { name: "Responsive Design", icon: "📱" },
-  { name: "Vite", icon: "⚡" },
-  { name: "Spec Driven Dev", icon: "📋" },
+  { name: "JavaScript",        icon: <SiJavascript  size={20} color="#F7DF1E" /> },
+  { name: "React",             icon: <SiReact       size={20} color="#61DAFB" /> },
+  { name: "Node.js",           icon: <SiNodedotjs   size={20} color="#339933" /> },
+  { name: "Express.js",        icon: <SiExpress     size={20} color="#ffffff" /> },
+  { name: "HTML5",             icon: <SiHtml5       size={20} color="#E34F26" /> },
+  { name: "CSS3",              icon: <FaCss3Alt     size={20} color="#1572B6" /> },
+  { name: "Tailwind CSS",      icon: <SiTailwindcss size={20} color="#38BDF8" /> },
+  { name: "Firebase",          icon: <SiFirebase    size={20} color="#FFCA28" /> },
+  { name: "Vite",              icon: <SiVite        size={20} color="#646CFF" /> },
+  { name: "Responsive Design", icon: <FaMobile      size={20} color="#A78BFA" /> },
 ];
 
 export const PROJECTS = [

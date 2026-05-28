@@ -4,9 +4,9 @@ import { FaGraduationCap, FaMapMarkerAlt, FaBriefcase, FaGlobe } from "react-ico
 
 const FACTS = [
   { icon: <FaGraduationCap size={18} />, label: "Education", value: "Jensen Yrkeshögskola" },
-  { icon: <FaMapMarkerAlt size={18} />, label: "Location", value: "Lund, Sweden" },
-  { icon: <FaBriefcase size={18} />, label: "Status", value: "Fresher / Open to Work" },
-  { icon: <FaGlobe size={18} />, label: "Languages", value: "English, Swedish" },
+  { icon: <FaMapMarkerAlt size={15} />, label: "Location", value: "Lund, Sweden" },
+  { icon: <FaBriefcase size={15} />, label: "Status", value: "Fresher / Open to Work" },
+  { icon: <FaGlobe size={15} />, label: "Languages", value: "English, Swedish" },
 ];
 
 const INTERESTS = [

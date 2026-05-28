@@ -93,10 +93,6 @@
   filter: blur(20px);
 }
 
-/* Text column */
-.textCol {
-}
-
 .bio {
   font-size: 15.5px;
   color: var(--text-secondary);

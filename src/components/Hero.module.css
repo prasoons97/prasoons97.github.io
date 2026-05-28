@@ -65,7 +65,7 @@
   align-items: center;
   flex: 1;
   padding-top: calc(var(--nav-height) + 60px);
-  padding-bottom: 60px;
+  padding-bottom: 10px;
   position: relative;
   z-index: 1;
 }
