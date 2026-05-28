@@ -6,7 +6,7 @@ export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  // { label: "Experience", href: "#experience" }, // uncomment when Experience section is enabled
   { label: "Contact", href: "#contact" },
 ];
 
@@ -39,9 +39,9 @@ export const SKILLS = {
     { name: "Web Security", level: "Learning", color: "#ef4444" },
     { name: "Debugging", level: "Confident", color: "#94a3b8" },
     { name: "Vite", level: "Confident", color: "#646cff" },
-    { name: "Claude CLI", level: "Familiar", color: "#d97706" },
-    { name: "OpenAI Codex", level: "Familiar", color: "#10b981" },
-    { name: "Agentic Coding", level: "Familiar", color: "#6e40c9" },
+    { name: "GitHub Copilot", level: "Confident", color: "#6e40c9" },
+    { name: "AI-Assisted Development", level: "Confident", color: "#d97706" },
+    { name: "Prompt Engineering", level: "Familiar", color: "#10b981" },
   ],
 };
 

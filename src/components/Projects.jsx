@@ -56,16 +56,18 @@ function ProjectCard({ project, index }) {
       </div>
 
       <div className={styles.cardFooter}>
-        <div className={styles.cardStats}>
-          <span className={styles.stat}>
-            <StarIcon />
-            {project.stats.stars}
-          </span>
-          <span className={styles.stat}>
-            <ForkIcon />
-            {project.stats.forks}
-          </span>
-        </div>
+        {(project.stats.stars > 0 || project.stats.forks > 0) && (
+          <div className={styles.cardStats}>
+            <span className={styles.stat}>
+              <StarIcon />
+              {project.stats.stars}
+            </span>
+            <span className={styles.stat}>
+              <ForkIcon />
+              {project.stats.forks}
+            </span>
+          </div>
+        )}
 
         <div className={styles.cardLinks}>
           <a

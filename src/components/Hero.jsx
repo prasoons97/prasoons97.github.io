@@ -73,7 +73,7 @@ export default function Hero({ onResumeClick }) {
                   "Frontend Developer",
                   "UI/UX Enthusiast",
                   "React Developer",
-                  "LIA Seeking",
+                  "Seeking LIA / Praktik",
                 ]}
               />
             </span>
@@ -82,7 +82,7 @@ export default function Hero({ onResumeClick }) {
           <p className={styles.subtitle}>
             A Frontend Developer student at Jensen Yrkeshögskola with hands-on
             experience building full-stack projects. Passionate about clean
-            code, great design, and currently seeking LIA internship
+            code, great design, and currently seeking LIA / Praktik
             opportunities.
           </p>
 

@@ -50,8 +50,8 @@ export default function About() {
               I'm a Frontend Developer based in Lund with a passion for
               creating web experiences that feel fast, look beautiful, and work
               for everyone. I work with the React ecosystem and have a strong
-              eye for design — which means I bridge the gap between dev and
-              design in any team I join.
+              eye for design — so I care about how things look as much as how
+              they work, making it easier to collaborate with designers from day one.
             </p>
             <p className={styles.bio}>
               When I'm not coding, you'll find me building personal projects,

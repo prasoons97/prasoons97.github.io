@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.center}>
-          {['about', 'skills', 'projects', 'experience', 'contact'].map((id) => (
+          {['about', 'skills', 'projects', 'contact'].map((id) => (
             <button
               key={id}
               className={styles.navLink}

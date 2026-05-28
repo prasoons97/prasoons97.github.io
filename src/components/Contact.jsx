@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { useInView } from "../hooks/useInView";
 import styles from "./Contact.module.css";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -68,11 +69,35 @@ export default function Contact() {
     }
 
     setStatus(STATUS.sending);
-    // Simulate API call — replace with your backend endpoint
-    await new Promise((res) => setTimeout(res, 1600));
-    setStatus(STATUS.success);
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setStatus(STATUS.idle), 5000);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_NOTIFY_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject || "(no subject)",
+          message: form.message,
+          reply_to: form.email,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+        {
+          to_name: form.name,
+          to_email: form.email,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+      setStatus(STATUS.success);
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus(STATUS.idle), 5000);
+    } catch {
+      setStatus(STATUS.error);
+      setTimeout(() => setStatus(STATUS.idle), 5000);
+    }
   };
 
   return (
@@ -194,9 +219,15 @@ export default function Contact() {
               )}
             </button>
 
+            {status === STATUS.error && (
+              <p className={styles.errorMsg}>
+                Something went wrong. Please email me directly at
+                prasoon.frontend@gmail.com
+              </p>
+            )}
             {status === STATUS.success && (
               <p className={styles.successMsg}>
-                ✅ Thanks! I'll get back to you soon.
+                Thanks! I'll get back to you soon.
               </p>
             )}
           </form>

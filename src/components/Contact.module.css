@@ -226,6 +226,12 @@
   cursor: not-allowed;
 }
 
+.errorMsg {
+  font-size: 14px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
 .successMsg {
   font-size: 14px;
   color: var(--green);

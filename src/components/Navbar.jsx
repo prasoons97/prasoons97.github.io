@@ -15,7 +15,7 @@ function ResumeIcon() {
 export default function Navbar({ onResumeClick }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const active = useActiveSection(['about', 'skills', 'projects', 'experience', 'contact']);
+  const active = useActiveSection(['about', 'skills', 'projects', 'contact']);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
