@@ -1,67 +1,69 @@
-import { useEffect, useRef } from 'react';
-import styles from './ResumeModal.module.css';
+import { useEffect, useRef } from "react";
+import styles from "./ResumeModal.module.css";
 
 const RESUME = {
-  name: 'Prasoon',
-  title: 'Frontend Developer',
+  name: "Prasoon Singh",
+  title: "Frontend Developer",
   contact: {
-    email: 'prasoon@example.com',
-    phone: '+91 98765 43210',
-    location: 'New Delhi, India',
-    github: 'github.com/prasoon',
-    linkedin: 'linkedin.com/in/prasoon',
-    portfolio: 'prasoon.dev',
+    email: "prasoon.frontend@gmail.com",
+    phone: "+46 70 123 4567",
+    location: "Lund, Sweden",
+    github: "github.com/prasoons97",
+    linkedin: "linkedin.com/in/prasoons97",
+    portfolio: "prasoons97.github.io",
   },
   summary:
-    'Frontend Developer specializing in React and modern JavaScript. I build mobile-first, responsive interfaces with a strong eye for detail and a spec-driven workflow that keeps teams aligned from day one.',
-  experience: [
-    {
-      role: 'Frontend Developer Intern',
-      company: 'TechStart Labs',
-      period: 'Jun 2024 – Present',
-      points: [
-        'Built mobile-first React dashboards with Tailwind CSS for 3 SaaS clients',
-        'Implemented optimistic UI patterns — zero loading spinners on common actions',
-        'Followed spec-driven development: API contracts signed off before any frontend code',
-      ],
-    },
-    {
-      role: 'Freelance Web Developer',
-      company: 'Self-Employed',
-      period: 'Jan 2023 – May 2024',
-      points: [
-        'Delivered 12+ responsive websites and React SPAs for clients',
-        'Built full-stack apps with Express.js + Firebase backends',
-        'All projects shipped mobile-first with cross-browser responsive layouts',
-      ],
-    },
-  ],
+    "Frontend Developer student at Jensen Yrkeshögskola with hands-on experience building full-stack projects. Passionate about clean code, great design, and currently seeking LIA internship opportunities.",
   skills: {
-    Frontend: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'Advanced CSS', 'Tailwind CSS', 'Responsive Design', 'Mobile-First CSS', 'Optimistic UI'],
-    Backend: ['Node.js', 'Express.js', 'Firebase', 'REST APIs'],
-    'Methods & Tools': ['Spec Driven Development', 'Git & GitHub', 'Vite', 'Figma'],
+    Frontend: [
+      "HTML5 & CSS3",
+      "JavaScript (ES6+)",
+      "React.js",
+      "Tailwind CSS",
+      "Responsive Design",
+      "Mobile-First CSS",
+      "TypeScript",
+      "Testing / TDD",
+    ],
+    Backend: [
+      "Node.js",
+      "Express.js",
+      "Firebase / Firestore",
+      "REST APIs",
+      "SQL",
+      "GraphQL",
+    ],
+    "Methods & Tools": [
+      "Git & GitHub",
+      "Figma / Wireframing",
+      "UI/UX Design",
+      "Accessibility (a11y)",
+      "Agile / Scrum",
+      "Vite",
+      "Debugging",
+    ],
   },
   projects: [
     {
-      name: 'ShopVerse E-Commerce',
-      tech: 'React · Firebase · Tailwind CSS · Node.js',
-      desc: 'Full-stack store with optimistic UI cart, Firebase auth and mobile-first responsive design.',
+      name: "WORN",
+      tech: "React · Node.js · Firebase · React Query · Express.js",
+      desc: "Fashion e-commerce store with category filters, cart via localStorage, optimistic checkout updates, and real-time Firestore order tracking.",
     },
     {
-      name: 'DevConnect API',
-      tech: 'Node.js · Express.js · Spec Driven Dev',
-      desc: 'Spec-first REST API — every endpoint documented before implementation.',
+      name: "Stitch",
+      tech: "React · TypeScript · Tailwind CSS · pdf-lib",
+      desc: "Client-side PDF merger — drag, reorder, and merge PDFs entirely in the browser. No server, no uploads, zero tracking.",
     },
     {
-      name: 'TaskFlow',
-      tech: 'React · Firebase · Tailwind CSS',
-      desc: 'Kanban board with drag-and-drop, optimistic updates and Firebase real-time sync.',
+      name: "iTask",
+      tech: "React · Express.js · Firebase · Firestore",
+      desc: "Full-stack todo app with real-time Firestore sync, create/update/delete tasks with a clean React frontend and Express.js REST backend.",
     },
   ],
   education: {
-    degree: 'B.Tech — Computer Science',
-    school: 'Placeholder University',
-    period: '2021 – 2025',
+    degree: "Frontendutvecklare (YH)",
+    school: "Jensen Yrkeshögskola",
+    period: "2025 – 2027",
   },
 };
 
@@ -71,12 +73,14 @@ export default function ResumeModal({ onClose }) {
 
   // Close on Escape
   useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
-    document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
     };
   }, [onClose]);
 
@@ -87,20 +91,33 @@ export default function ResumeModal({ onClose }) {
   };
 
   return (
-    <div className={styles.overlay} ref={overlayRef} onClick={handleOverlayClick} role="dialog" aria-modal="true" aria-label="Resume">
+    <div
+      className={styles.overlay}
+      ref={overlayRef}
+      onClick={handleOverlayClick}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Resume"
+    >
       <div className={styles.sheet}>
         {/* Toolbar — hidden on print */}
         <div className={styles.toolbar}>
           <div className={styles.toolbarLeft}>
             <span className={styles.toolbarTitle}>Resume</span>
-            <span className={styles.toolbarSub}>— Prasoon, Frontend Developer</span>
+            <span className={styles.toolbarSub}>
+              — Prasoon, Frontend Developer
+            </span>
           </div>
           <div className={styles.toolbarRight}>
             <button className={styles.printBtn} onClick={handlePrint}>
               <PrintIcon />
               Download PDF
             </button>
-            <button className={styles.closeBtn} onClick={onClose} aria-label="Close resume">
+            <button
+              className={styles.closeBtn}
+              onClick={onClose}
+              aria-label="Close resume"
+            >
               <CloseIcon />
             </button>
           </div>
@@ -137,28 +154,10 @@ export default function ResumeModal({ onClose }) {
               {Object.entries(RESUME.skills).map(([cat, items]) => (
                 <div key={cat} className={styles.skillGroup}>
                   <span className={styles.skillCat}>{cat}</span>
-                  <span className={styles.skillItems}>{items.join(' · ')}</span>
+                  <span className={styles.skillItems}>{items.join(" · ")}</span>
                 </div>
               ))}
             </div>
-          </Section>
-
-          {/* Experience */}
-          <Section title="Experience">
-            {RESUME.experience.map((job) => (
-              <div key={job.role} className={styles.expItem}>
-                <div className={styles.expHeader}>
-                  <div>
-                    <span className={styles.expRole}>{job.role}</span>
-                    <span className={styles.expCompany}> — {job.company}</span>
-                  </div>
-                  <span className={styles.expPeriod}>{job.period}</span>
-                </div>
-                <ul className={styles.expPoints}>
-                  {job.points.map((p) => <li key={p}>{p}</li>)}
-                </ul>
-              </div>
-            ))}
           </Section>
 
           {/* Projects */}
@@ -178,10 +177,17 @@ export default function ResumeModal({ onClose }) {
           <Section title="Education">
             <div className={styles.expHeader}>
               <div>
-                <span className={styles.expRole}>{RESUME.education.degree}</span>
-                <span className={styles.expCompany}> — {RESUME.education.school}</span>
+                <span className={styles.expRole}>
+                  {RESUME.education.degree}
+                </span>
+                <span className={styles.expCompany}>
+                  {" "}
+                  — {RESUME.education.school}
+                </span>
               </div>
-              <span className={styles.expPeriod}>{RESUME.education.period}</span>
+              <span className={styles.expPeriod}>
+                {RESUME.education.period}
+              </span>
             </div>
           </Section>
         </div>
@@ -210,7 +216,14 @@ function ContactLine({ icon, children }) {
 
 function PrintIcon() {
   return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M6 9V2h12v7" />
       <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2" />
       <rect x="6" y="14" width="12" height="8" />
@@ -220,7 +233,14 @@ function PrintIcon() {
 
 function CloseIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+    >
       <path d="M18 6L6 18M6 6l12 12" />
     </svg>
   );

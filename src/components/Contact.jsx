@@ -8,19 +8,19 @@ const CONTACT_LINKS = [
   {
     icon: <MdEmail size={18} />,
     label: "Email",
-    value: "prasoons97@gmail.com",
-    href: "mailto:prasoons97@gmail.com",
+    value: "prasoon.frontend@gmail.com",
+    href: "mailto:prasoon.frontend@gmail.com",
   },
   {
     icon: <FaLinkedin size={18} />,
     label: "LinkedIn",
-    value: "linkedin.com/in/prasoon",
+    value: "in/Prasoon-Singh",
     href: "https://www.linkedin.com/in/prasoons97/",
   },
   {
     icon: <FaGithub size={18} />,
     label: "GitHub",
-    value: "github.com/prasoon",
+    value: "github/Prasoon-Singh",
     href: "https://github.com/prasoons97/prasoons97",
   },
 ];
